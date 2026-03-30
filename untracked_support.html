@@ -15,9 +15,9 @@
             --border: #2a2a30;
             --text: #e4e4e7;
             --text-muted: #8b8b94;
-            --accent: #34d399;
-            --accent-dim: rgba(52, 211, 153, 0.08);
-            --accent-border: rgba(52, 211, 153, 0.15);
+            --accent: #3b82f6;
+            --accent-dim: rgba(59, 130, 246, 0.08);
+            --accent-border: rgba(59, 130, 246, 0.15);
         }
 
         html { font-size: 16px; }
@@ -46,7 +46,6 @@
             padding: 80px 24px 120px;
         }
 
-        /* Header */
         .hero {
             margin-bottom: 72px;
         }
@@ -68,7 +67,6 @@
             max-width: 480px;
         }
 
-        /* Sections */
         section {
             margin-bottom: 56px;
         }
@@ -85,7 +83,6 @@
             border-bottom: 1px solid var(--border);
         }
 
-        /* FAQ */
         .faq-item {
             padding: 20px 0;
             border-bottom: 1px solid var(--border);
@@ -112,7 +109,6 @@
             line-height: 1.65;
         }
 
-        /* Contact card */
         .contact-card {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -142,8 +138,8 @@
         }
 
         .contact-card a:hover {
-            background: rgba(52, 211, 153, 0.14);
-            border-color: rgba(52, 211, 153, 0.3);
+            background: rgba(59, 130, 246, 0.14);
+            border-color: rgba(59, 130, 246, 0.3);
         }
 
         .contact-card a svg {
@@ -151,7 +147,6 @@
             height: 16px;
         }
 
-        /* Privacy summary */
         .privacy-grid {
             display: grid;
             gap: 12px;
@@ -172,7 +167,6 @@
             margin-top: 2px;
         }
 
-        /* Footer */
         footer {
             margin-top: 80px;
             padding-top: 24px;
@@ -221,27 +215,47 @@
 
             <div class="faq-item">
                 <h3>How does Untracked detect workouts?</h3>
-                <p>Untracked reads heart rate data from Apple Health to identify periods of elevated activity. You can review these periods and log them as workouts retroactively — even if you forgot to press "start."</p>
+                <p>The app reads heart rate data from Apple Health and identifies periods where your heart rate was significantly elevated above your personal resting baseline. You can review these periods and log them as workouts — even if you forgot to press "start."</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I adjust how workouts are detected?</h3>
+                <p>Yes. Open Settings (gear icon) to change the detection sensitivity and minimum workout duration. "More" sensitivity picks up lighter activity, "Less" only flags intense sessions. The minimum duration controls how long an activity must last to be detected (5–60 minutes).</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What are Workout Reminders?</h3>
+                <p>An optional feature that checks for untracked workouts once a day at a time you choose. If any are found, you get a notification. Tap it to open the app with the detected workout ready to save. Enable it in Settings — it uses minimal battery.</p>
             </div>
 
             <div class="faq-item">
                 <h3>What data does the app access?</h3>
-                <p>Untracked reads heart rate samples and workout data from HealthKit. All processing happens entirely on your device. No data is sent to any server.</p>
+                <p>Untracked reads heart rate samples, workouts, body measurements, distance, and step count from Apple Health. It writes workouts and associated data (calories, distance) back when you save. All processing happens on your device — nothing is sent anywhere.</p>
             </div>
 
             <div class="faq-item">
                 <h3>Why don't I see any heart rate data?</h3>
-                <p>Make sure you've granted Untracked permission to read Health data. Go to Settings → Health → Data Access & Devices → Untracked and enable heart rate reading. You'll also need an Apple Watch or another device that records heart rate to Health.</p>
+                <p>Make sure you've granted Untracked permission to read Health data. Go to Settings → Health → Data Access & Devices → Untracked and enable heart rate reading. You also need a device that records heart rate to Apple Health.</p>
             </div>
 
             <div class="faq-item">
-                <h3>Will retroactively logged workouts appear in Apple Health?</h3>
-                <p>Yes. When you confirm a workout in Untracked, it's written back to HealthKit and will appear in the Fitness app and Health alongside your other workouts.</p>
+                <h3>Will logged workouts appear in Apple Health?</h3>
+                <p>Yes. When you save a workout in Untracked, it's written to Apple Health and appears in the Fitness app alongside your other workouts.</p>
             </div>
 
             <div class="faq-item">
                 <h3>Does the app work without an Apple Watch?</h3>
-                <p>Untracked needs heart rate data in Apple Health. If another device (like a Bluetooth chest strap) writes HR data to Health, the app will work with that data too.</p>
+                <p>Untracked works with any device that records heart rate to Apple Health — Apple Watch, Garmin, Fitbit, Oura, chest straps, or any compatible wearable.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What do the colored dots on the calendar mean?</h3>
+                <p>The calendar shows dots on days where untracked workouts were detected. The color ranges from green (few) to red (many), giving you a heatmap of your unlogged activity.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What languages are supported?</h3>
+                <p>English, Ukrainian, Spanish, German, French, Japanese, Portuguese (Brazil), Italian, and Polish. The app follows your device language automatically.</p>
             </div>
         </section>
 
@@ -259,6 +273,10 @@
                 <div class="privacy-item">
                     <svg class="check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                     <span>Heart rate and workout data are read from and written to Apple Health only.</span>
+                </div>
+                <div class="privacy-item">
+                    <svg class="check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Background workout detection runs entirely on-device with no network access.</span>
                 </div>
             </div>
         </section>
