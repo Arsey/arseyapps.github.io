@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untracked — Privacy Policy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+        :root {
+            --bg: #0C0C0E;
+            --surface: #161619;
+            --border: #2a2a30;
+            --text: #e4e4e7;
+            --text-muted: #8b8b94;
+            --accent: #3b82f6;
+            --accent-dim: rgba(59, 130, 246, 0.08);
+            --accent-border: rgba(59, 130, 246, 0.15);
+        }
+
+        html { font-size: 16px; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .grain {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            z-index: 9999;
+        }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 80px 24px 120px;
+        }
+
+        .hero {
+            margin-bottom: 72px;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero .updated {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 480px;
+            margin-top: 12px;
+        }
+
+        section {
+            margin-bottom: 48px;
+        }
+
+        section h2 {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        section p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            line-height: 1.65;
+        }
+
+        section p:last-child {
+            margin-bottom: 0;
+        }
+
+        section p strong {
+            color: var(--text);
+        }
+
+        .data-grid {
+            display: grid;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .data-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+        }
+
+        .data-item .icon {
+            flex-shrink: 0;
+            margin-top: 2px;
+            font-size: 0.85rem;
+        }
+
+        .data-item .icon.read { color: var(--accent); }
+        .data-item .icon.write { color: #f59e0b; }
+        .data-item .icon.check { color: #22c55e; }
+        .data-item .icon.none { color: #ef4444; }
+
+        .highlight-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 16px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 8px;
+        }
+
+        .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+        }
+
+        .contact-card p {
+            margin-bottom: 20px;
+        }
+
+        .contact-card a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 10px 20px;
+            border-radius: 8px;
+            background: var(--accent-dim);
+            border: 1px solid var(--accent-border);
+            transition: all 0.2s ease;
+        }
+
+        .contact-card a:hover {
+            background: rgba(59, 130, 246, 0.14);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .contact-card a svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        footer {
+            margin-top: 80px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        footer span, footer a {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        footer a {
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 48px 20px 80px; }
+            .hero h1 { font-size: 1.6rem; }
+            .hero { margin-bottom: 56px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="grain"></div>
+
+    <div class="container">
+        <header class="hero">
+            <h1><span>Untracked</span> Privacy Policy</h1>
+            <div class="updated">Last updated: March 30, 2026</div>
+            <p>Untracked is a workout logging app that helps you retroactively log workouts using heart rate data from Apple Health. Your privacy matters — here's exactly what the app does with your data.</p>
+        </header>
+
+        <section>
+            <h2>Data We Read</h2>
+            <div class="data-grid">
+                <div class="data-item">
+                    <span class="icon read">&#x2190;</span>
+                    <span><strong>Heart Rate</strong> — to display your daily timeline and detect periods of activity</span>
+                </div>
+                <div class="data-item">
+                    <span class="icon read">&#x2190;</span>
+                    <span><strong>Workouts</strong> — to show existing workouts and avoid duplicate suggestions</span>
+                </div>
+                <div class="data-item">
+                    <span class="icon read">&#x2190;</span>
+                    <span><strong>Body Measurements</strong> — age, weight, and biological sex for calorie estimation</span>
+                </div>
+                <div class="data-item">
+                    <span class="icon read">&#x2190;</span>
+                    <span><strong>Distance &amp; Steps</strong> — to display activity data for workout periods</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Data We Write</h2>
+            <div class="data-grid">
+                <div class="data-item">
+                    <span class="icon write">&#x2192;</span>
+                    <span><strong>Workouts</strong> — workouts you create or edit within the app</span>
+                </div>
+                <div class="data-item">
+                    <span class="icon write">&#x2192;</span>
+                    <span><strong>Active Energy</strong> — calorie estimates associated with saved workouts</span>
+                </div>
+                <div class="data-item">
+                    <span class="icon write">&#x2192;</span>
+                    <span><strong>Distance</strong> — distance data associated with saved workouts</span>
+                </div>
+            </div>
+            <p>All reads and writes go through Apple Health (HealthKit) only.</p>
+        </section>
+
+        <section>
+            <h2>What Stays on Your Device</h2>
+            <div class="highlight-box">
+                <div class="data-grid">
+                    <div class="data-item">
+                        <span class="icon check">&#x2713;</span>
+                        <span>All health data processing happens entirely on your device</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="icon check">&#x2713;</span>
+                        <span>Heart rate cache stored locally for faster startup — auto-deleted after 14 days</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="icon check">&#x2713;</span>
+                        <span>App preferences (detection settings, reminder time) stored locally via UserDefaults</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="icon check">&#x2713;</span>
+                        <span>Background workout detection runs on-device with no network access</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="icon check">&#x2713;</span>
+                        <span>Notifications are generated locally — no push server involved</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>What We Don't Do</h2>
+            <div class="data-grid">
+                <div class="data-item">
+                    <span class="icon none">&#x2717;</span>
+                    <span>No data sent to external servers</span>
+                </div>
+                <div class="data-item">
+                    <span class="icon none">&#x2717;</span>
+                    <span>No analytics, tracking, or crash reporting</span>
+                </div>
+                <div class="data-item">
+                    <span class="icon none">&#x2717;</span>
+                    <span>No advertising identifiers collected</span>
+                </div>
+                <div class="data-item">
+                    <span class="icon none">&#x2717;</span>
+                    <span>No accounts, no sign-ups, no cloud sync</span>
+                </div>
+                <div class="data-item">
+                    <span class="icon none">&#x2717;</span>
+                    <span>No third-party services receive your data</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Third-Party SDKs</h2>
+            <p>The app binary includes the Google Mobile Ads SDK. It is currently inactive and does not load, display, or transmit any data.</p>
+        </section>
+
+        <section>
+            <h2>Background Processing</h2>
+            <p>When you enable Workout Reminders, the app performs a daily background check at your chosen time. It reads today's heart rate data and runs the detection algorithm locally. If untracked workouts are found, a local notification is sent. No data leaves your device.</p>
+            <p>This feature is opt-in and can be disabled at any time in Settings.</p>
+        </section>
+
+        <section>
+            <h2>Your Rights</h2>
+            <div class="data-grid">
+                <div class="data-item">
+                    <span class="icon check">&#x2713;</span>
+                    <span>Revoke Health access anytime: <strong>Settings → Health → Data Access → Untracked</strong></span>
+                </div>
+                <div class="data-item">
+                    <span class="icon check">&#x2713;</span>
+                    <span>Disable reminders and background processing in the app's Settings</span>
+                </div>
+                <div class="data-item">
+                    <span class="icon check">&#x2713;</span>
+                    <span>Delete any workout created by Untracked through the app or Apple Health</span>
+                </div>
+                <div class="data-item">
+                    <span class="icon check">&#x2713;</span>
+                    <span>Uninstalling removes all locally cached data and preferences</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Children's Privacy</h2>
+            <p>Untracked does not knowingly collect data from children under 13. The app requires Apple Health, which has its own age restrictions.</p>
+        </section>
+
+        <section>
+            <h2>Contact</h2>
+            <div class="contact-card">
+                <p>Questions about this privacy policy?</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7yf6E-FeDqtUf-2RKr052aBkg2cBulKFmqKF0IEUVTOwjIg/viewform" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    Contact Us
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <span>&copy; 2026 Untracked</span>
+            <a href="untracked_support.html">Support</a>
+        </footer>
+    </div>
+</body>
+</html>
