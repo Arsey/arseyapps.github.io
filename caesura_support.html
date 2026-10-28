@@ -176,6 +176,11 @@
             border-color: var(--accent);
         }
 
+        .contact-card a svg {
+            width: 16px;
+            height: 16px;
+        }
+
         footer {
             margin-top: 80px;
             padding-top: 24px;
@@ -222,15 +227,6 @@
             font-weight: 500;
             margin-bottom: 8px;
             color: var(--text);
-        }
-
-        .placeholder {
-            display: inline-block;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            padding: 10px 20px;
-            border-radius: 8px;
-            border: 1px dashed var(--border);
         }
     </style>
 </head>
@@ -316,9 +312,11 @@
         <section>
             <h2>Contact</h2>
             <div class="contact-card">
-                <p>Have a question, found a bug, or want to suggest a feature?</p>
-                <!-- PLACEHOLDER: support contact not set yet. Replace this span with a Caesura support form link. -->
-                <span class="placeholder">Support form coming soon</span>
+                <p>Have a question, found a bug, or want to suggest a feature? Fill out the form below and I'll get back to you.</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdXa4NYeDd9sz_2kV0RLZaBBEtFaFPrKSZPPyHfd25x13OaKQ/viewform" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    Open Support Form
+                </a>
             </div>
         </section>
 
