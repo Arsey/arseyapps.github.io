@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesura — Privacy Policy</title>
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+        :root {
+            color-scheme: light dark;
+            --bg: #FAFAF9;
+            --surface: #FFFFFF;
+            --border: #E7E5E4;
+            --text: #1C1917;
+            --text-muted: #57534E;
+            --accent: #0D9488;
+            --accent-dim: rgba(13, 148, 136, 0.08);
+            --accent-border: rgba(13, 148, 136, 0.2);
+            --eye: #3B82F6;
+            --ok: #22C55E;
+            --no: #EF4444;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1C1B1A;
+                --surface: #2A2928;
+                --border: #3D3B39;
+                --text: #F5F5F4;
+                --text-muted: #D6D3D1;
+                --accent: #2DD4BF;
+                --accent-dim: rgba(45, 212, 191, 0.08);
+                --accent-border: rgba(45, 212, 191, 0.2);
+                --eye: #60A5FA;
+                --ok: #4ADE80;
+                --no: #F87171;
+            }
+        }
+
+        html { font-size: 16px; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 80px 24px 120px;
+        }
+
+        .hero {
+            margin-bottom: 72px;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero .updated {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 480px;
+            margin-top: 12px;
+        }
+
+        section {
+            margin-bottom: 48px;
+        }
+
+        section h2 {
+            font-family: ui-monospace, "SF Mono", Menlo, monospace;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        section p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            line-height: 1.65;
+        }
+
+        section p:last-child {
+            margin-bottom: 0;
+        }
+
+        section p strong, .data-item strong {
+            color: var(--text);
+        }
+
+        .data-grid {
+            display: grid;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .data-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+        }
+
+        .data-item .icon {
+            flex-shrink: 0;
+            margin-top: 2px;
+            font-size: 0.85rem;
+        }
+
+        .data-item .icon.read { color: var(--eye); }
+        .data-item .icon.check { color: var(--ok); }
+        .data-item .icon.none { color: var(--no); }
+
+        .highlight-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 16px 0;
+        }
+
+        .contact-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+        }
+
+        .contact-card p {
+            margin-bottom: 20px;
+        }
+
+        .contact-card a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 10px 20px;
+            border-radius: 8px;
+            background: var(--accent-dim);
+            border: 1px solid var(--accent-border);
+            transition: all 0.2s ease;
+        }
+
+        .contact-card a:hover {
+            border-color: var(--accent);
+        }
+
+        footer {
+            margin-top: 80px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        footer span, footer a {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 48px 16px 80px; }
+            .hero h1 { font-size: 1.6rem; }
+            .hero { margin-bottom: 56px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <h1><span>Caesura</span> Privacy Policy</h1>
+            <div class="updated">Last updated: October 28, 2026</div>
+            <p>Caesura is a menu bar app for macOS that reminds you to take short eye breaks and longer rest breaks. It has no accounts and keeps your data on your Mac. Here is exactly what it uses and why.</p>
+        </header>
+
+        <section>
+            <h2>What the App Uses on Your Mac</h2>
+            <div class="data-grid">
+                <div class="data-item">
+                    <span class="icon read">&#x2190;</span>
+                    <span><strong>Camera (optional, off by default)</strong> — only if you turn on eye tracking. Each frame is analysed on your Mac with Apple's Vision framework to tell whether you are facing the screen and whether your eyes are open. Frames are never saved, recorded or sent anywhere.</span>
+                </div>
+                <div class="data-item">
+                    <span class="icon read">&#x2190;</span>
+                    <span><strong>Whether your microphone or camera is busy</strong> — so a break waits while you are in a call. Caesura asks macOS which apps are using an audio input and whether a camera is running. It never captures, listens to or records audio or video.</span>
+                </div>
+                <div class="data-item">
+                    <span class="icon read">&#x2190;</span>
+                    <span><strong>Fullscreen video</strong> — the position of on-screen windows and whether an app is keeping the display awake, so a break does not interrupt a video or presentation. Window contents are never read.</span>
+                </div>
+                <div class="data-item">
+                    <span class="icon read">&#x2190;</span>
+                    <span><strong>Idle time</strong> — how many seconds have passed since your last keyboard or mouse input, so idle time does not count as work. What you type or click is never read.</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>What Stays on Your Device</h2>
+            <div class="highlight-box">
+                <div class="data-grid">
+                    <div class="data-item">
+                        <span class="icon check">&#x2713;</span>
+                        <span>Break statistics (completed and skipped breaks per day) are stored locally in the app's preferences</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="icon check">&#x2713;</span>
+                        <span>Your settings and break messages are stored locally in the app's preferences</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="icon check">&#x2713;</span>
+                        <span>All camera processing for eye tracking happens on your Mac</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="icon check">&#x2713;</span>
+                        <span>Notifications, banners and break screens are generated locally</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Anonymous Usage Analytics (Opt-In)</h2>
+            <p>Analytics are <strong>off by default</strong>. If you turn on "Share Anonymous Analytics" in Settings or during onboarding, Caesura sends usage signals to <strong>TelemetryDeck</strong>, a privacy-focused analytics service. You can turn this off at any time in Settings.</p>
+            <p>Signals describe how the app is used, for example: the app started or quit, a break started, finished, was skipped or snoozed, an onboarding page or settings tab was opened, a menu item was used, eye tracking was turned on or off, and whether camera access was granted. Settings changes are sent as coarse ranges (for example "16–25 minutes"), not exact values. Session length and days since install are also sent as ranges.</p>
+            <p>The TelemetryDeck SDK adds technical details such as app version, macOS version, Mac model, screen size, language, region and time zone. Instead of a personal identifier it sends a salted, hashed random identifier, so signals cannot be linked to you.</p>
+            <p>Signals never include camera images, face data, audio, window contents, keystrokes, your name or email address.</p>
+        </section>
+
+        <section>
+            <h2>What We Don't Do</h2>
+            <div class="data-grid">
+                <div class="data-item">
+                    <span class="icon none">&#x2717;</span>
+                    <span>No accounts, no sign-ups, no cloud sync</span>
+                </div>
+                <div class="data-item">
+                    <span class="icon none">&#x2717;</span>
+                    <span>No recording or storing of camera images or audio</span>
+                </div>
+                <div class="data-item">
+                    <span class="icon none">&#x2717;</span>
+                    <span>No advertising and no tracking across apps or websites</span>
+                </div>
+                <div class="data-item">
+                    <span class="icon none">&#x2717;</span>
+                    <span>No data sold or shared with anyone; the only network service is TelemetryDeck, and only when you opt in</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Your Choices</h2>
+            <div class="data-grid">
+                <div class="data-item">
+                    <span class="icon check">&#x2713;</span>
+                    <span>Turn analytics on or off in Caesura's Settings</span>
+                </div>
+                <div class="data-item">
+                    <span class="icon check">&#x2713;</span>
+                    <span>Turn eye tracking off in Caesura's Settings, or revoke camera access in <strong>System Settings → Privacy &amp; Security → Camera</strong></span>
+                </div>
+                <div class="data-item">
+                    <span class="icon check">&#x2713;</span>
+                    <span>Turn off holding breaks during calls from the menu bar</span>
+                </div>
+                <div class="data-item">
+                    <span class="icon check">&#x2713;</span>
+                    <span>Deleting the app and its preferences removes your statistics and settings</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Children's Privacy</h2>
+            <p>Caesura does not knowingly collect personal data from anyone, including children under 13.</p>
+        </section>
+
+        <section>
+            <h2>Changes</h2>
+            <p>If what Caesura uses or sends changes, this page will be updated and the date at the top will change.</p>
+        </section>
+
+        <section>
+            <h2>Contact</h2>
+            <div class="contact-card">
+                <p>Questions about this privacy policy? See the support page for how to reach us.</p>
+                <a href="caesura_support.html">
+                    Caesura Support
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <span>&copy; 2026 Caesura</span>
+            <a href="caesura_support.html">Support</a>
+        </footer>
+    </div>
+</body>
+</html>
