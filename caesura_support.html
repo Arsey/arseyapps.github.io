@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesura — Support</title>
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+        :root {
+            color-scheme: light dark;
+            --bg: #FAFAF9;
+            --surface: #FFFFFF;
+            --border: #E7E5E4;
+            --text: #1C1917;
+            --text-muted: #57534E;
+            --accent: #0D9488;
+            --accent-dim: rgba(13, 148, 136, 0.08);
+            --accent-border: rgba(13, 148, 136, 0.2);
+            --eye: #3B82F6;
+            --ok: #22C55E;
+            --no: #EF4444;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1C1B1A;
+                --surface: #2A2928;
+                --border: #3D3B39;
+                --text: #F5F5F4;
+                --text-muted: #D6D3D1;
+                --accent: #2DD4BF;
+                --accent-dim: rgba(45, 212, 191, 0.08);
+                --accent-border: rgba(45, 212, 191, 0.2);
+                --eye: #60A5FA;
+                --ok: #4ADE80;
+                --no: #F87171;
+            }
+        }
+
+        html { font-size: 16px; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 80px 24px 120px;
+        }
+
+        .hero {
+            margin-bottom: 72px;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero .updated {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 480px;
+            margin-top: 12px;
+        }
+
+        section {
+            margin-bottom: 48px;
+        }
+
+        section h2 {
+            font-family: ui-monospace, "SF Mono", Menlo, monospace;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        section p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            line-height: 1.65;
+        }
+
+        section p:last-child {
+            margin-bottom: 0;
+        }
+
+        section p strong, .data-item strong {
+            color: var(--text);
+        }
+
+        .data-grid {
+            display: grid;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .data-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+        }
+
+        .data-item .icon {
+            flex-shrink: 0;
+            margin-top: 2px;
+            font-size: 0.85rem;
+        }
+
+        .data-item .icon.read { color: var(--eye); }
+        .data-item .icon.check { color: var(--ok); }
+        .data-item .icon.none { color: var(--no); }
+
+        .highlight-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 16px 0;
+        }
+
+        .contact-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+        }
+
+        .contact-card p {
+            margin-bottom: 20px;
+        }
+
+        .contact-card a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 10px 20px;
+            border-radius: 8px;
+            background: var(--accent-dim);
+            border: 1px solid var(--accent-border);
+            transition: all 0.2s ease;
+        }
+
+        .contact-card a:hover {
+            border-color: var(--accent);
+        }
+
+        footer {
+            margin-top: 80px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        footer span, footer a {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 48px 16px 80px; }
+            .hero h1 { font-size: 1.6rem; }
+            .hero { margin-bottom: 56px; }
+        }
+    
+        .faq-item {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-item:first-of-type {
+            padding-top: 0;
+        }
+
+        .faq-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .faq-item h3 {
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .placeholder {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px dashed var(--border);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <h1><span>Caesura</span> Support</h1>
+            <p>Short eye breaks on a steady rhythm, a longer rest after long stretches of work, and no interruptions during calls. A small menu bar app for macOS.</p>
+        </header>
+
+        <section>
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3>How do eye breaks work?</h3>
+                <p>By default, every 20 minutes a calm full-screen overlay asks you to look at something far away for 20 seconds, the 20-20-20 rule. You can change the interval and the length in Settings.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What is a rest break?</h3>
+                <p>Caesura counts the time you actually spend working. After a long stretch (two hours by default) it suggests a longer rest, 20 minutes by default. Idle time and a locked screen do not count as work.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I see a break coming?</h3>
+                <p>Yes. A small banner counts down before each break, so nothing catches you mid-sentence. You can snooze, pause or skip a break from the menu bar.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Why did my break not start during a call?</h3>
+                <p>While a microphone, camera or fullscreen video is in use, Caesura holds the countdowns and the menu says why, for example which app is using the microphone. When the call ends, the countdowns continue and a break that was due starts then. Caesura only checks whether these devices are busy; it never listens or records. You can turn this off in the menu bar.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What does eye tracking do?</h3>
+                <p>Eye tracking is optional and off by default. When you turn it on, the break countdown pauses while you are still looking at the screen and continues once you look away. Camera frames are processed on your Mac and are never stored or sent anywhere.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Eye tracking does not work. What should I check?</h3>
+                <p>Make sure Caesura has camera access in <strong>System Settings → Privacy &amp; Security → Camera</strong>, and that your face is visible and reasonably lit.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What is strict mode?</h3>
+                <p>With strict mode on, an eye break cannot be skipped until its countdown has finished. Turn it on or off in Settings.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Where are my statistics?</h3>
+                <p>Open the menu bar menu to see today's breaks, and open the statistics window from there for completed and skipped breaks per day and over the last weeks. Statistics are stored only on your Mac.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Which macOS version do I need?</h3>
+                <p>macOS 15.5 or later.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Privacy</h2>
+            <div class="data-grid">
+                <div class="data-item">
+                    <span class="icon check">&#x2713;</span>
+                    <span>No account, no sign-up. Your statistics and settings stay on your Mac.</span>
+                </div>
+                <div class="data-item">
+                    <span class="icon check">&#x2713;</span>
+                    <span>Camera frames for eye tracking are processed on your Mac and never stored or sent.</span>
+                </div>
+                <div class="data-item">
+                    <span class="icon check">&#x2713;</span>
+                    <span>Audio is never captured; Caesura only checks whether a microphone is in use.</span>
+                </div>
+                <div class="data-item">
+                    <span class="icon check">&#x2713;</span>
+                    <span>Anonymous usage analytics are off unless you turn them on in Settings.</span>
+                </div>
+            </div>
+            <p>Details are in the <a href="caesura_privacy.html" style="color: var(--accent)">privacy policy</a>.</p>
+        </section>
+
+        <section>
+            <h2>Contact</h2>
+            <div class="contact-card">
+                <p>Have a question, found a bug, or want to suggest a feature?</p>
+                <!-- PLACEHOLDER: support contact not set yet. Replace this span with a Caesura support form link. -->
+                <span class="placeholder">Support form coming soon</span>
+            </div>
+        </section>
+
+        <footer>
+            <span>&copy; 2026 Caesura</span>
+            <a href="caesura_privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
